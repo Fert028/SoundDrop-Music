@@ -1,0 +1,12 @@
+.link {
+  padding: .25rem 1.25rem;
+  color: #404040;
+  display: flex;
+  gap: .5rem;
+  align-items: center;
+}
+
+.linkActive {
+  color: #ededed;
+  filter: drop-shadow(0 0 6px rgba(#ededed, .8));
+}
