@@ -3,15 +3,15 @@
 import s from './navLink.module.scss';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { ReactNode } from 'react';
 import clsx from 'clsx';
-import { JSX, ReactNode } from 'react';
 
 interface NavLinkProps {
   href: string;
   children: ReactNode;
 }
 
-export default function NavLink({ href, children }: NavLinkProps): JSX.Element {
+export default function NavLink({ href, children }: NavLinkProps) {
   const pathname = usePathname();
   const isActive = pathname === href;
 

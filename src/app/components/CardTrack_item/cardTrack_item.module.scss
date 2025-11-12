@@ -1,0 +1,13 @@
+
+.container {
+  width: 100%;
+  height: 80px;
+  padding-inline: 8px;
+  border-radius: 16px;
+  display: flex;
+  justify-content: space-between;
+  transition: .25;
+  &:hover{
+    background-color: rgba(#808080, .5);
+  }
+}
