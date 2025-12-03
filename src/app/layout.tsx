@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { Nunito, Nunito_Sans, Comfortaa, Prompt } from "next/font/google";
 import "./globals.scss";
-import NavBar from "./components/navBar/navBar";
-import Logo from "./components/Logo/logo";
+import Providers from "@/components/Providers";
+import NavBar from "../components/navBar/navBar";
+import Logo from "../components/Logo/logo";
 
 const nunito = Nunito({
   variable: "--font-nunito",
@@ -38,15 +39,17 @@ export default function RootLayout({
   return (
     <html lang="en,ru">
       <body className={`${comfortaa.variable} ${nunito.variable} ${nunitoSans.variable} ${prompt.variable}`}>
-        <div className="nav_container">
-          <Logo />
-          <NavBar />
-        </div>
-        <main>
-          <div className='container'>
-            {children}
+        <Providers>
+          <div className="nav_container">
+            <Logo />
+            <NavBar />
           </div>
-        </main>
+          <main>
+            <div className='container'>
+              {children}
+            </div>
+          </main>
+        </Providers>
       </body>
     </html>
   );

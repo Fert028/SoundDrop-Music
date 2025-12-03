@@ -1,12 +1,14 @@
+'use client';
+
 import s from './navBar.module.scss';
 import NavLink from '../NavLink/navLink';
-import { Search, Music, Heart } from "@deemlol/next-icons";
+import { Search, Music, Heart, User } from "@deemlol/next-icons";
 
 export default function NavBar() {
 	return(
 		<div className={s.container}>
+			
 			<nav className={s.nav}>
-
 				<NavLink href={'/search'}>
 					<Search size={24} />
 					<span>Поиск</span>
@@ -21,8 +23,11 @@ export default function NavBar() {
 					<Heart size={24} />
 					<span>Избранное</span>
 				</NavLink>
-
 			</nav>
+
+			<NavLink href={'profile'}>
+				<User size={24} />
+			</NavLink>
 		</div>
 	)
 }
