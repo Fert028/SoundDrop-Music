@@ -1,0 +1,6 @@
+@import '../../app/styles/variables.scss';
+@import '../../app/styles/mixins.scss';
+
+.button {
+  @include glass-button;
+}

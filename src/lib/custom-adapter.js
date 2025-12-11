@@ -202,5 +202,46 @@ export default function CustomAdapter() {
 
       return result.rows[0] || null;
     },
+    async getUserByEmail(email) {
+      const result = await pool.query(
+        `SELECT id, name, email, image, email_verified as "emailVerified", password
+        FROM users WHERE email = $1`,
+        [email]
+      );
+      return result.rows[0] || null;
+    },
+
+    async updateUser(user) {
+      const { id, name, email, image, emailVerified, password } = user;
+      
+      let query;
+      let params;
+      
+      if (password) {
+        query = `UPDATE users 
+                SET name = COALESCE($2, name),
+                    email = COALESCE($3, email),
+                    image = COALESCE($4, image),
+                    email_verified = COALESCE($5, email_verified),
+                    password = COALESCE($6, password),
+                    updated_at = NOW()
+                WHERE id = $1
+                RETURNING id, name, email, image, email_verified as "emailVerified"`;
+        params = [id, name, email, image, emailVerified, password];
+      } else {
+        query = `UPDATE users 
+                SET name = COALESCE($2, name),
+                    email = COALESCE($3, email),
+                    image = COALESCE($4, image),
+                    email_verified = COALESCE($5, email_verified),
+                    updated_at = NOW()
+                WHERE id = $1
+                RETURNING id, name, email, image, email_verified as "emailVerified"`;
+        params = [id, name, email, image, emailVerified];
+      }
+
+      const result = await pool.query(query, params);
+      return result.rows[0];
+    },
   };
 }

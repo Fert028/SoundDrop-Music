@@ -1,0 +1,45 @@
+
+// #COLORS
+$background: #000;
+$foreground: #fff;
+$basic-color: #2c2d2d;
+$accent-color: darkviolet;
+$gray-color: #606060;
+
+// Border
+$border-radius-s: 18px;
+$border-radius-m: 24px;
+
+// Padding
+$padding-xs: 8px;
+$padding-s: 16px;
+$padding-m: 24px;
+
+// Colors
+$glass-bg: rgba(255, 255, 255, 0.06);
+$glass-bg-light: rgba(255, 255, 255, 0.03);
+$glass-border: rgba(255, 255, 255, 0.12);
+$glass-text: rgba(255, 255, 255, 0.95);
+$glass-muted: rgba(255, 255, 255, 0.7);
+$glass-focus: rgba(79, 70, 229, 0.14);
+
+// Shape & spacing
+// $glass-radius: 18px;
+$glass-pad-y: 10px;
+$glass-pad-x: 20px;
+$gap-xs: 4px;
+$gap-s: 8px;
+$gap-m: 16px;
+$gap-l: 32px;
+
+// Effects
+$glass-blur: 8px;
+$glass-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+$glass-shadow-hover: 0 8px 22px rgba(0, 0, 0, 0.2);
+$glass-shadow-focus: 0 8px 24px rgba(0, 0, 0, 0.22);
+
+// Transform
+$transition: all .18s ease;
+
+// Font
+$h1: 24px;

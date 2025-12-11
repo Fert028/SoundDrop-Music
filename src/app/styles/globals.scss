@@ -1,5 +1,8 @@
-$background: #0a0a0a;
-$foreground: #ededed;
+/* @import "tailwindcss"; */
+@import './reset.css';
+@import './mixins.scss';
+@import './variables.scss';
+
 
 * {
   box-sizing: border-box;
@@ -16,13 +19,13 @@ body {
 
 body {
   color: $foreground;
-  background: $background;
+  background-color: $background;
   font-family: var(--font-comfortaa), Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
   display: flex;
-  gap: 16px;
+  flex-direction: column;
 }
 
 main {
@@ -32,27 +35,24 @@ main {
 }
 
 a {
-  color: #383838;
+  color: $gray-color;
   text-decoration: none;
   font-weight: 500;
   transition: .25s;
-  &:hover {
-    color: #adadad
-  }
+}
+.link:hover {
+  color: $foreground;
 }
 
-.nav_container {
+.navigation {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  padding: 8px;
+  padding: 8px 16px;
   gap: 8px;
 }
 
 .container {
   all: inherit;
-  padding: 16px;
-  background-color: rgba(#202020, .5);
-  border: 1px solid #383838;
-  border-radius: 24px;
+  padding: $padding-m;
 }

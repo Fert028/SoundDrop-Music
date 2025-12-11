@@ -1,0 +1,53 @@
+@import './variables.scss';
+
+@mixin glass-input {
+  width: 280px;
+  padding: $glass-pad-y $glass-pad-x;
+  font-size: 16px;
+  color: $glass-text;
+  border: 1px solid $gray-color;
+  border-radius: $border-radius-s;
+  outline: none;
+  transition: $transition;
+
+  &::placeholder {
+    color: $glass-muted;
+  }
+  &:focus {
+    border-color: rgba(79, 70, 229, 0.9);
+  }
+}
+
+@mixin glass-button($w: fit-content) {
+  width: $w;
+  padding: $glass-pad-y $glass-pad-x;
+  background: transparent;
+  font-weight: 600;
+  font-size: 16px;
+  color: $glass-text;
+  border: 1px solid $gray-color;
+  border-radius: $border-radius-s;
+  user-select: none;
+  cursor: pointer;
+  transition: $transition;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.04);
+  }
+  &:active {
+    background: transparent;
+  }
+  &:disabled {
+    opacity: .6;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+}
+
+@mixin card($w, $h: fit-content, $p: $padding-m) {
+  width: $w;
+  height: $h;
+  padding: $p;
+  background-color: $basic-color;
+  border-radius: $border-radius-m;
+}

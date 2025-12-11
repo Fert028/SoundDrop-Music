@@ -1,8 +1,6 @@
 @import '../../app/styles/mixins.scss';
 @import '../../app/styles/variables.scss';
 
-.logo {
-  font-family: var(--font-propt);
-  font-size: 18;
-  color: $foreground;
+.input {
+  @include glass-input;
 }

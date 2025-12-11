@@ -1,0 +1,85 @@
+@import '../styles/variables.scss';
+@import '../styles/mixins.scss';
+
+.loading__wrapper {
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  min-height: 100vh; 
+}
+.loading__container {
+  text-align: center;
+}
+.loafing__animation {
+  border-radius: 9999px; 
+  border-bottom-width: 2px; 
+  border-color: #2563EB; 
+  width: 3rem; 
+  height: 3rem; 
+  animation: spin 1s linear infinite;
+
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
+.loading__animation__text {
+  margin-top: 1rem; 
+  color: #4B5563;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  @include card(800px);
+}
+.title {
+  h1 {
+    font-size: $h1;
+  }
+  p {
+    color: $gray-color;
+  }
+}
+
+.userCard {
+  display: flex;
+  align-items: center;
+  gap: $gap-l;
+}
+.userCard_image {
+  aspect-ratio: 1;
+  width: 70px;
+  border-radius: 30%;
+}
+.userCard_info {
+  display: flex;
+  flex-direction: column;
+  gap: $gap-s;
+  p {
+    font-size: small;
+    color: #6B7280;
+  }
+}
+
+.loginActions {
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+}
+.loginActions_button {
+  @include glass-button;
+}
+
+.buttonLogOut {
+  background-color: #DC2626;
+
+  &:hover {
+  background-color: #B91C1C; 
+  }
+}

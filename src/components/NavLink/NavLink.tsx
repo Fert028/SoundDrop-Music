@@ -1,6 +1,6 @@
 'use client';
 
-import s from './navLink.module.scss';
+import s from './NavLink.module.scss';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { ReactNode } from 'react';
@@ -16,7 +16,7 @@ export default function NavLink({ href, children }: NavLinkProps) {
   const isActive = pathname === href;
 
   return (
-    <Link href={href} className={isActive ? clsx(s.linkActive, s.link) : s.link}>
+    <Link href={href} className={isActive ? clsx(s.linkActive, s.link) : clsx(s.link, 'link')}>
       {children}
     </Link>
   );

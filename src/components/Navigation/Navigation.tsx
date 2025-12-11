@@ -1,7 +1,7 @@
 'use client';
 
-import s from './navBar.module.scss';
-import NavLink from '../NavLink/navLink';
+import s from './Navigation.module.scss';
+import NavLink from '../NavLink/NavLink';
 import { Search, Music, Heart, User } from "@deemlol/next-icons";
 
 export default function NavBar() {
@@ -25,7 +25,7 @@ export default function NavBar() {
 				</NavLink>
 			</nav>
 
-			<NavLink href={'profile'}>
+			<NavLink href={'/profile'}>
 				<User size={24} />
 			</NavLink>
 		</div>
